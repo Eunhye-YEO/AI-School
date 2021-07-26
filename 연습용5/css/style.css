@@ -1,0 +1,166 @@
+.transform {
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+
+	/*transform: rotate(-10deg);*/
+	/*transform: scale(0.5,0.5);*/
+	/*transform: skew(-10deg,20deg);*/
+	/*transform: translate(100px,300px);*/
+
+	/*margin-left: 300px;*/
+	/*margin-top: 500px;*/
+
+
+/*	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+*/    
+     /*transform: rotate(10deg);*/
+ }
+
+
+/*trans form (참고사이트! https://www.w3schools.com/css/css3_2dtransforms.asp)
+사용시 주의점 
+-사용하고있는 각 브라우저들의 여러 버전이 있는데, 하이버전들을 고려해야할때 이러한 접두사(프리픽스)들을 사용해야한다.
+-크롬,사파리 - webkit , 파이어폭스 - moz , 익스플로러 - ms , 오페라 -o
+예시)
+	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	transform: rotate(10deg);(마지막에 디폴트 값으로 넣어준다.)
+
+
+rotate(x deg): 2차원 적인 평면 회전효과,음수(왼쪽),양수(오른쪽)전달가능
+scale(x,y): 내가 키우고 싶은 박스의 비율을 입력(x축의 몇 배, y축의 몇배)
+skew(x축deg,y축deg): 선택한 영역의 각도에 영향을 미치는 속성,3차원적효과,음수(왼쪽),양수(오른쪽)전달가능 
+translate(xpx,ypx): 선택한 영역의 위치를 변경할때 사용(x축,y축)*/
+
+ .transition{
+ 	width: 300px;
+ 	height: 300px;
+ 	background-color: yellow;
+
+ 	transition-property: width;
+ 	transition-duration: 2s;
+ 	transition-timing-function: linear;
+ 	transition-delay: 1s;
+
+ 	transition: width 2s linear , height 2s linear;
+ }
+
+ .transition:hover {
+ 	width: 600px;
+ 	height: 600px;
+ }
+
+
+
+/* transition
+:애니메이션이 자연스럽게 변화하는 과정을 보여주고싶을때 사용
+
+transition-property: 변화시키고싶은것;
+transition-duration: 변화하는데 걸리는 시간;
+transition-timing-function: 움직이는 속도의 성격 지정 ; <linear(처음부터 끝까지 일정한 속도), ...>
+transition-delay: 애니메이션 효과를 언제 발동시킬지;
+ 	transition: width 2s linear 1s ,(또 다른 변화 사용시 , 사용);  
+ 	-이런 식으로 한줄로도 표현가능! but 순서는 상관 없으나, duration(먼저)과 delay(나중) 는 순서가 있다.
+*/
+
+.animation{
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+
+	animation-name: changeWidth;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-delay: 1s;
+
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes changeWidth{
+	0% {
+		width: 300px;
+	    height: 300px;
+	    background-color: yellow;}
+	50% {
+		background-color:blue;
+	}   
+
+	100% {
+		width: 600px;
+	    height: 600px;
+	    background-color: red;
+	    border: solid 10px black;}
+
+
+}
+
+/*animation
+
+animation-name: 원하는이름;
+animation-duration: 총 동작 시간;
+animation-timing-function: 시간 성격;
+animation-delay: 시작 딜레이 시간;
+animation-iteration-count: 진행횟수;infinite(무한)
+animation-direction: 진행방향;
+
+*애니메이션도 transiton 과 같은 방법으로 한줄로 요약가능하다 순서동일
+예시 animation: spinLion 1.5s(duration) linear infinite alternate 0.5s(delay);
+*프리픽스 사용시 keyframes에도
+ @ -프리픽스- keyframes 설정이름{
+	from { -프리픽스-tansform:; }
+	to{-프리픽스-tansform:; }
+ }
+ 과 같이 프리픽스를 사용하고 싶은 곳에 다 적어줘야한다.
+
+
+@keyframes 설정한 이름 {
+	from {width: 300px;}
+	to {width: 600px;}
+	(애니메이션 실행시 따라와야하는 코드 - 
+	  연동시켜주는 역할, from(0%) 에서 to(100%) 를 적어주어야한다.)}
+
+*/
+.spin-lion {
+	width: 150px;
+	height: 150px;
+	background-color: blue;
+
+	animation-name: spinLion;
+	animation-duration: 1500ms;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+
+	/*animation: spinLion 1.5s linear infinite alternate 0.5s;*/
+}
+@keyframes spinLion {
+	from{transform: rotate(-10deg);
+
+	}
+	to{transform: rotate(10deg);
+
+	}
+}
+
+/*참고사이트!stylie
+여러가지 스타일들이 어떻게 되어있는지 보고 코드를 가져 올 수 있다.
+https://jeremyckahn.github.io/stylie/*/
+
+
+
+
+
+
+
+
+
+
+
+

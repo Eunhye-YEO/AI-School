@@ -1,0 +1,483 @@
+/*html,body는 각각 자체적으로 margin,padding의 기본값이 있으므로
+웨사이트 만들때는 0으로 적용하는 것이 좋음*/
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+
+.box-model {
+    box-sizing: border-box;
+
+	width: 200px;
+	height: 200px;
+	background-color: yellow;
+	border: solid 10px red;
+
+	margin: 100px 0px 0px 100px;
+	padding: 100px 0px 0px 100px;
+}
+
+/*
+	margin-left: 100px;
+	margin-top: 100px;
+	margin-right: ;
+	margin-bottom: ;
+	padding-left: 100px;
+	padding-top: 100px;
+	padding-right: ;
+	padding-bottom: ; 
+}
+*/
+
+/*padding 을 사용하게되면 원래 크기 + 벌어지는 공간으로 인해 
+ 크기가 달라질 수 있다.
+ -> but 사용하더라도 공간의 크기를 그대로 유지했으면 좋겠다 싶을때는 
+ box-sizing:  border-box; 사용
+
+margin,padding: toppx rightpx bottompx leftpx;
+<코드가 길어질수록 웹사이트 로딩속도가 느려지기때문에 최대한 줄여
+/*적으면 로딩속도가 빨라짐-한줄로 작성하는 연습하기>*/
+
+.margin-one {
+	width: 100%;
+	height: 100px;
+	background-color: yellow;
+
+	margin-bottom: 100px;
+}
+.margin-two {
+	width: 100%;
+	height: 100px;
+	background-color: blue;
+
+	margin-top: 150px;
+}
+
+.margin-parent{
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+}
+.margin-child{
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	background-color: blue;
+
+	margin-top: 100px
+}
+
+/*마진 병합 현상 : 크게 두가지 
+1.형제지간 : 공백을 공유하게 될 경우 숫자가 큰것이 우선
+2.부모자식지간 : position:  absolute; 를 꼭 사용해야 일어나지 않는다.*/
+
+/*
+h1 {
+	display: inline-block;
+
+	width: 200px;
+	height: 200px;
+	background-color: yellow;
+
+	margin-top: 100px;
+}
+
+span {
+	display: block;
+
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+
+	margin-top: 100px
+}
+*/
+
+/*inline(나란히, 공간을 가지고 있지 않음-상 하 배치작업x,미세한공백을 갖고있음),
+block(줄바꿈현상,자체적 공간을 만들수 있음)
+
+->but 서로의 특징을 갖고싶을때 사용하는 것 display:  ; 
+두가지 모두의 속성을 갖고싶을땐 -으로 연결*/
+
+
+.inline-block{
+	display: inline-block;
+
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+}
+
+.inline, .inline-block, img {
+	vertical-align: middle;
+}
+
+/*vertical-align 속성-뒤죽박죽으로 되어있을때 정리하는 속성,
+가장 크기가 큰 것을 기준으로 정렬
+but, inline 요소에서만 사용가능
+img 태그는 "inline-block"의 속성을 갖고 있어서 적용됨 */
+
+.static-parent{
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+}
+.static-child{
+	width: 150px;
+	height: 150px;
+	background-color: blue;
+
+	margin-top: 100px;
+	top: 100px;
+}
+
+.box1{
+	width: 300px;
+	height: 200px;
+	background-color: gray;
+}
+.fixed-parent {
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+}
+.fixed-child {
+	position: fixed;
+
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+
+	margin-top: 100px;
+	top: 100px; 
+}
+.box2 {
+	width: 300px;
+	height: 2000px;
+	background-color: green;
+}
+
+
+.box1{
+	width: 300px;
+	height: 200px;
+	background-color: gray;
+}
+.relative-parent {
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+}
+.relative-child {
+	position: relative;
+
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+
+	/*margin-top: 100px;*/
+	top: 100px; 
+}
+
+.box1{
+	width: 300px;
+	height: 200px;
+	background-color: gray;
+}
+.absolute-parent {
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+}
+.absolute-child {
+	position: absolute;
+
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+
+	/*margin-top: 100px;*/
+	top: 100px; 
+}
+
+/*
+*차원 : 1차원(선), 2차원(평면-하나를움직이면 옆에 붙어있는 것도 함께 움직임),
+ 3차원(z축이 존재-하나를 옮겨도 다른것이 옮겨지는것은 아님)
+-> 홈페이지는 2,3 차원의 조합으로 이루어짐
+*position(static, fixed, relative, absolute)
+아래 세가지를 기준으로 포지선 속성값이 갖고있는 특징 파악
+
+1.static(2차원,모든html은 기본적으로 포지션스테틱상태,디폴드 값으로 갖고있다.)
+1)margin-top 사용시 부모 자식 지간에 발생하는 마진병합현상이 일어난다.
+2)top, right, bottom, left 속성을 사용할 수 있는지- 사용불가
+3)자식의 높이 값이 부모가 높이를 갖고있지 않을때 영향을 준다.
+
+2.fixed(3차원영역)
+1)margin-top 사용시 부모 자식 지간에 발생하는 마진병합현상이 일어나지 않는다.
+2)top, right, bottom, left 속성을 사용가능하지만,브라우저 왼쪽 상단기준으로 움직인다.)
+3)자식의 높이 값이 부모에게 영향을 주지 않는다.
+
+3.relative(2차원+3차원)
+1)margin-top 사용시 부모 자식 지간에 발생하는 마진병합현상이 일어난다.(2차원)
+2)top, right, bottom, left 속성을 사용할 수는 있지만, 
+브라우저 기준이 아닌 최초 있었던 위치를 기준으로 움직인다(내가주체).(3차원)
+3)자식의 높이 값이 부모에게 영향을 준다.(2차원)
+
+4.absolute(3차원, fixed와 동일)
+1)margin-top 사용시 부모 자식 지간에 발생하는 마진병합현상이 일어나지 않는다.
+2)top, right, bottom, left 속성을 사용할 수는 있다.
+(but 부모가 어떤 포지션(2차-브라우저기준, 3차-자기기준)이냐에 따라서 자식의 높이 값이 달라진다.)
+3)자식의 높이 값이 부모에게 영향을 주지 않는다. */
+
+
+.z-one{
+	/*position: absolute;*/
+
+	width: 200px;
+	height: 400px;
+	background-color: yellow;
+	/*z-index: 10;*/
+}
+
+.z-two{
+	position: absolute;
+
+	width: 200px;
+	height: 300px;
+	background-color: blue;
+	/*z-index: 20;*/
+}
+/*형제관계에서 3차원의 성격을 갖고 있는 position 속성 값을 사용하게 될경우
+겹치는 현상이 일어난다. 여기서 뒤에있는 것을 앞으로 끌어올리고 싶을때 사용하는 속성값
+"z-index: 10;" 이러한 값을 적용하지 않았을때는 0이 디폴트값으로 들어가있다.
+->z축의 위치를 조정할 수 있다. 즉 , 3차원적인 특징이 있는 영역에서만 사용이가능하다.
+ex)absolute.fixed(3차원), relative(2,3차원)*/
+
+
+
+.left-1{
+	float: left;
+
+	width: 100px;
+	height: 150px;
+	background-color: blue;
+}
+
+.right-1{
+	float: right;
+
+	width: 100px;
+	height: 150px;
+	background-color: green;
+}
+
+/*
+header {
+	width: 100%;
+	height: 100px;
+	background-color: yellow;
+}
+.left {
+	float: left;
+
+	width: 300px;
+	height: 200px;
+	background-color: pink;
+}
+
+.center {
+	float: left;
+
+	width: 500px;
+	height: 200px;
+	background-color: blue;
+}
+.right {
+    float: right;
+
+	width: 300px;
+	height: 200px;
+	background-color: green;
+}
+footer {
+    clear: both;
+
+	width: 100%;
+	height: 100px;
+	background-color: black;
+}
+
+section {
+	width: 1400px;
+	height: 200px;
+	background-color: orange;
+}
+*/
+
+
+/*디스플레이 인라인-블록을 사용하지 않고 내가 선택한 영역을
+x축으로 나란히 정렬하는 방법
+
+float : 특정 오브젝트를 브러우저의 왼쪽끝,오른쪽으로 배치하고 싶을때 사용하는 css
+        같은 선상에 박스를 배치하고자 할때 키는 속성,3차원적 특성을 갖고 있음
+        주의: 
+        1.float사용시 부모의 값이 가변일경우 레이아웃이 브라우저 크기에 따라 틀어짐
+             그러므로 부모의 값이 고정인 것으로 사용한다.
+             but 가변값을 사용할 경우 어짜피 공간의 크기가 가변값이므로 굳이 부모의 값이 고정일 필요가 없다.      
+        2. 부모의 width가 float의 총 width합 보다 더 커야함.(틀어짐방지)
+        3.float을 사용한 그 영역의 높이값이 부모에게 영향을 주지 않는다. 
+        4.float을 사용시 position:static,relative 만 사용 가능, 3차원 끼리 만나면 기능이 상쇄     
+clear: both(양쪽모두를 끄겠다.); 
+          -float과 함께 사용,같은 선상에 박스를 배치하고자 할때 끄는 속성*/
+
+
+/*float의 특징을 활용해 전통적인 레이아웃구조 
+*참고! 공간을 만들때 만드는 태그들(header, main, section, div)은 block 요소의 성격을 갖고있음 
+       : 줄바꿈 현상, y축 정렬
+
+       */
+/*
+.left-2{
+    float: left;
+
+	width: 100px;
+	height: 150px;
+	background-color: yellow;
+}
+.right-2{
+	float: right;
+
+	width: 100px;
+	height: 150px;
+	background-color: blue;
+}
+footer {
+    
+
+	width: 100%;
+	height: 100px;
+	background-color: black;
+}
+
+.clearfix{
+	clear: both;
+}
+
+section {
+    overflow: hidden;
+
+	width: 800px;
+	background-color: orange;
+
+}
+
+*/
+/*clearfix: footer에 clear: both; 를 사용하게되면 html 코드만 봤을때 어떤부분들이 float,clear가 
+되었는지 명확하게 알수가 없다.그래서 관례적으로 빠르게 파악하기에 용의하다.*/
+
+/*
+.over-box{
+    overflow: hidden;
+
+	width: 200px;
+	height: 200px;
+	background-color: yellow;
+}
+*/
+
+
+/*overflow와 float을 함께 사용하면 자식의 height 값을 부모가 가질 수 있도록 할 수 있다. 
+overflow: hidden(박스박 영역의 글이 안보이드록);,
+oeverflow-y : scroll(y축을 기준으로 스크롤 생성);
+oeverflow-x : scroll(x축을 기준으로 스크롤 생성*/
+
+.container{
+	display: flex;
+	/*flex-direction: row;*/
+	/*flex-wrap: wrap; */
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: baseline;
+
+	width: 1000px;
+	height: 500px;
+	border: solid 10px red;
+}
+
+.item {width: 200px; }
+
+.one {
+	height: 100px; 
+	background-color: yellow;}
+.two {
+	height: 200px; 
+	background-color: blue;}
+.three {
+	/*width: 900px; */
+	height: 300px; 
+	background-color: orange;}
+
+/*클래스를 두개 사용하여 하나는 공간 크기를 담당하고 나머지 클래스들은 부가적인 속성 적용
+flex : float보다 제약이 많이 줄어든다. x축,왼쪽부터 정렬
+flex-direction : row(x축 정렬,기본값), column(y축정렬), row-reverse(역순), column-reverse(역순);
+                 정렬을 바꾸고 싶을때 사용
+flex-wrap: nowrap(부모영역을 벗어나지 않고 부모의 사이즈에 맞춰 resize 해준다.);,
+           wrap(부모의 영역보다 자식의 width 합이 더크게되면 자동으로 줄바꿈 현상을 만들어줌)                 
+flex-flow: direction과 wrap을 동시에 입력할때 사용하는 것        
+justify-content: flex-start(기본-왼쪽부터 정렬),flex-end(오른쪽부터),flex-center(가운데), 
+                 space-between(각사이에 일정한 공간을 넣고 싶을때),space-around(바깥족부분에
+                 공백을 넣고 싶을때);
+         ->x축을 기준으로 정렬 하고 싶을때
+align-items: flex-start(가장 위쪽),flex-end(밑으로),center(중앙)
+            ,baseline(각박스들간 밑부분을 기준으로);
+         ->y축 정렬을 바꾸고싶을때
+(참고 사이트! https://flexbox.help/)
+
+ */
+
+
+.center-1{
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+
+	margin: 0 auto;
+}
+
+/*	margin: (상하),(좌우);*/
+.center-2{
+	position: relative;
+
+	width: 300px;
+	height: 300px;
+	background-color: blue;
+
+	left: 50%;
+	margin-left: -150px;
+
+}
+
+
+/*	중앙정렬
+    position: relative;
+
+	width: 300px;
+	height: 300px;
+	background-color: blue;
+
+	left: 50%;
+	margin-left: -150px;(width의 절반값)
+	방법을 이용해 중앙정렬이 가능하지만, width을 변경할때마다 margin-left 값이 변경되어야 한다.
+
+참고 사이트!  https://css-tricks.com/centering-css-complete-guide/ */
+
+
+
+
+
+
+
+
+
+

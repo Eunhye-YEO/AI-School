@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+}
+
+
+#one, #two, #three {
+	widows: 100%;
+	height: 800px;
+}
+#one {
+	background-color: yellow;
+}
+
+#two {
+	background-color: pink;
+}
+#three {
+	background-color: gray;
+}
+
+
+.text-box {
+	width: 200px;
+	height: 200px;
+	background-color: yellow;
+
+	white-space: nowrap;
+	/*x축으로 쭉나열되고, 스크롤도 생김*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/*말줄임 표시를 하기 위해서는 위에 세가지 코드 함께 사용*/
+}
+
+
+h1 {
+	background-color: pink;
+}
+
+h2 {
+	background-color: gray;
+}
+
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/*미리 css 에 말줄임표시를 담당하는 클래스를 만들어놓고 html에 적용하면 말줄임이 된다.*/
+
+
+.m-b-10 {
+	margin-bottom: 10px;
+}
+.m-b-15 {
+	margin-bottom: 15px;
+}
+.m-b-20 {
+	margin-bottom: 20px;
+}
+.m-b-100 {
+	margin-bottom: 100px;
+}
+
+/* 위와 같이 미리 css에서 클래스를 지정해놓고 html에서 사용하면 다른 분들이 보기에 이부분에서 
+이러한 css 를 적용했구나라는걸 빠르게 알 수 있다. */

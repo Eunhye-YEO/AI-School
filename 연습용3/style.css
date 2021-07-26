@@ -1,0 +1,228 @@
+/*
+h1 {
+	font-size: 80px;
+	}
+	*/
+/* 디테일하게하고 싶을 경우 부모의 태그이름을 입력
+콤마를 이용하여 동시에 작업도 가능 */
+
+/*
+header {
+	color: red;
+}
+header h1,
+footer h1 {color: blue;}
+header p,
+footer p {color: green;}
+
+footer h1 {color: blue;}
+footer p {color: green;}
+*/
+
+/*
+h1 {color: red;
+}
+*/
+/*고유의값을 지정함으로써 겹치는 태그들을
+따로 스타일을 지정할수있도록하는방법*/
+/*id속성값(이름- 하나밖에 갖지 못함) 지정법 # 사용*/
+/*
+#test1 {color: blue;}
+*/
+/*class (별명- 한사람당 여러개 별명가능, 재사용가능)지정법 . 사용*/
+/*
+.test2 {color: green;}
+*/
+
+/*type을 이용해서 속성값 지정 방법 [] 사용*/
+/*
+input[type='text'] {
+	border: solid 10px red;
+}
+
+input[type='password'] {
+	border: solid 10px blue;
+}
+*/
+/*
+.bg-1 {
+	background-color: red;
+}
+.font-size-1 {
+	font-size: 50px;
+}
+#color-1 {
+	color: red;
+}
+#font-style-1 {
+	font-size: italic;
+}
+*/
+
+/*
+#intro h2{
+	color: red;
+}
+.container p {
+	color: blue;
+}
+ header div p {
+	color: blue;
+}
+#intro .container p {
+	color: blue;
+}
+*/
+
+/*style속성>id>class>tag마지막>tag 순으로 순위가 정해진다*/
+
+/*
+#color-2 {color: pink;}
+.color-1 {
+	color: green;
+}
+h1{
+	color: red;
+}
+h1{color: blue;}
+*/
+
+/*더 디테일하게 작성할 수록 우선순위가 높아진다.*/
+
+
+/*원본코드는 놔두고 새로운디자인으로 덮어 씌우고싶을때 : 케스케이딩*/
+
+/*
+#intro .container h1 {
+	color: pink;
+}
+
+#intro div h1 {
+	color: green;
+}
+
+#intro h1 {
+	color: blue;
+}
+header h1 {
+	color: red;
+}
+*/
+
+/*공간의 디폴트값은 투명,
+ px 은 고정값
+ 브라우저 크기에따라 공간이 자연스럽게
+ resize 를 원할때는 % 를 사용(가변값- 기준점을 기준으로 크기책정) 
+*/
+
+/*
+div {
+	width: 100%;
+	height: 300px;
+
+	min-width: 700px ;
+	max-width: 900px;
+
+    border: solid 10px red;
+    border-radius: 50px;
+
+	background-color: yellow;
+
+	opacity: 1;
+}
+
+h1 {color: rgb(123, 111, 21);
+    font-size: 80px;
+    font-style: initial;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    text-decoration: underline;
+    text-align: right;
+    background-color: pink;
+
+}
+
+ul {
+	list-style: none;
+}
+
+*/
+/* ex)font-family: Arial, Times, sens-serif;
+font family 에서 정한 여러폰트의 순서대로 우선순위가 적용된다.
+브라우저에서 사용가능한 폰트사용을 위해 앞에서 순서대로 적용
+항상 어느 브라우저에서도 가능한 suns-serif를 마지막에 넣어준다.
+
+text-align: right; 로 위치를 지정해줄 수 있지만,
+    background-color: pink*를 통해서 움직일 수 있는 범위를 확인 하면 좋다.
+
+    opacity: 0~1;/ 1에 가까울수록 선명 */
+/*
+    #bg {
+    	width: 900px;
+    	height: 900px;
+    	background-color: yellow;
+    	background-image: url(icon.png);
+    	background-repeat: no-repeat;
+    	background-position: center;
+}*/
+    	
+/*배경화면 이미지가 크리가 커질수록 계속 적으로 반복이 되는데,
+그거를 제어하기 위해 쓰는것 ,background-repeat:repeat-x,repeat-y,no-repeat 중 하나 사용
+background-position: 위치;를 이용하여 공간안에서 이미지의 위치를 정할 수 있다.*/
+
+/*    
+a:link { color: red;
+
+}
+a:active{
+	color: blue;
+}
+a:hover {
+	color: pink;
+}
+input:focus {
+	border: solid 10px red;
+}
+
+li:first-child{color: red;}
+li:last-child{color: blue;}
+li:nth-child(2n+1){color: grey;}
+*/
+/*
+link:링크에 대해 디자인할때 사용
+active: 클릭시 변경*
+hover: 마우스를 올려놨을때 변경
+
+동일한 여러 태그 중
+first-child (첫번째 자식) , last-child (마지막자식),
+nth-child() (()에있는 자식 ex-2n+1홀수,2n짝수)*/
+/*
+li:before{
+	content: "|";
+}
+li:after{
+	content: "---"}
+*/
+/*before와 after는 글자를 중심으로 어떤 내용물을 강제적으로 삽입 가능*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
