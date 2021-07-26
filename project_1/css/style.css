@@ -1,0 +1,148 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	/*공백 제거 작업*/
+}
+a {
+	color: #000000;
+	text-decoration: none;
+}
+/*여기까지 초기화작업*/
+
+.menu ul {
+	overflow: hidden;
+/*자식의 li 태그가 부모의ul 태그에 영향을 주기 때문에,
+overflow hidden 사용으로 부모의 높이값 인식*/
+	background-color: pink;}
+
+.menu li{
+	/*display: inline-block;*/
+	float: left;
+	/*display: inline-block; 를 사용하면 x축 정렬에 공간의 크기를
+유지할 수 있다. but inline 은 기본저으로 각 사이에 공백이 있다.
+그래서 지금 만들고자하는 메뉴는 공백이 없기때문에 사용 x 
+-> float:  left; 사용으로 왼쪽에서부터 정렬
+*/
+
+	width: 100px;
+	/*height: 50px;*/
+	background-color: yellow;
+	/*border: solid 1px red;
+	각 박스에서 겹치는 부분이 2px로 되기때문에 더 디테일하게*/
+	border-top: solid 1px red;
+	border-bottom: solid 1px red;
+	border-left: solid 1px red;
+	
+	/*text-align: center;*/
+/*	line-height: 50px;
+	height와 동일 값 넣기 but 간혹 서체에 따라 달라짐
+	 -y축 중앙정렬*/
+
+ /*	 padding-top: 15px;
+	 padding-bottom: 15px;
+	높이 값이 없을경우 박스안의 위아래 동일한 공백생성
+	 으로 중앙정렬 */
+
+}
+.menu li a {
+	display: block;
+	/*박스안 글자 뿐아니라 모든 공간을 클릭할 수 있도록*/
+	text-align: center;
+
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.menu li a:hover {
+	color: blue;
+	/*마우스 올릴때 색변경*/
+}
+
+.menu li:last-child {
+	border-right: solid 1px red;
+	/*border 값을 디테일하게 지저해주다보면 한쪽만 남을경우
+	이렇게 따로 값을 지정해주어 완성한다.
+	-가상선택자*/
+}
+
+
+
+.kakao-lists li {
+	margin-bottom: 20px;
+	}
+.kakao-lists li a{
+	display: block;
+	padding-left: 25px;
+}
+
+.kakao-lists li img,
+.kakao-lists li .kakao-info{
+	vertical-align: middle;
+}
+.kakao-lists li img {
+	border-radius: 20px;
+	margin-right: 10px;
+}
+.kakao-lists li .kakao-info{
+	display: inline-block;
+
+}
+.kakao-lists li .kakao-info h3{
+	font-size: 18px;
+	margin: 0;
+}
+.kakao-lists li .kakao-info span{
+	font-size: 14px;
+	color: #c8c8c8;
+}
+
+
+h3,p {
+	margin: 0;
+}
+
+.living-lists {
+	width: 750px;
+    background-color: orange;
+}
+.living-lists .image-link,
+.living-lists .info-link {
+	display: inline-block;
+	vertical-align: middle;
+}
+.living-lists .image-link {
+	margin-right: 21px;
+}
+
+.living-lists .info-link {
+	width: 512px;
+}
+
+.title-wrap {
+	border-top: solid 2px #000000;
+	border-bottom: solid 1px #000000;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 20px;
+}
+.title-wrap h3 {
+	margin-bottom: 20px;
+}
+
+.title-wrap .btn-wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+}
+/*flexbox.help 참고*/
+/*css레이아웃을 배웁시다 https://ko.learnlayout.com/ 페이지 참고*/
